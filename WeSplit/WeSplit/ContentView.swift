@@ -18,7 +18,7 @@ struct ContentView: View {
     
     var totalPerPerson: Double {
 //        let peopleCount = Double(numberOfPeople + 2)
-        let peopleCount = Double(numberOfPeople) ?? 0
+        let peopleCount = Double(numberOfPeople) ?? 1
         let tipSelection = Double(tipPercentages[tipPercentage])
         let orderAmount = Double(checkAmount) ?? 0
         
@@ -38,6 +38,10 @@ struct ContentView: View {
         let grandTotal = orderAmount + tipValue
         
         return grandTotal
+    }
+    
+    var useRedText: Bool {
+        if tipPercentage == 4 { return true } else { return false }
     }
     
     var body: some View {
@@ -72,6 +76,7 @@ struct ContentView: View {
                 
                 Section(header: Text("Total amount")) {
                     Text("$\(totalAmount, specifier: "%.2f")")
+                        .foregroundColor(useRedText ? Color.red : Color.black)
                 }
             }
         .navigationBarTitle("WeSplit")

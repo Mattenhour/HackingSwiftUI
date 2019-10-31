@@ -35,11 +35,7 @@ struct ContentView: View {
                     Button(action: {
                         self.flagTapped(number)
                     }) {
-                        Image(self.countries[number])
-                            .renderingMode(.original)
-                            .clipShape(Capsule())
-                            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-                            .shadow(color: .black, radius: 2)
+                        flagImage(countryFlag: self.countries[number])
                     }
                 }
                 Text("Current score: \(score)")
@@ -69,6 +65,21 @@ struct ContentView: View {
         correctAnswer = Int.random(in: 0...2)
     }
     
+}
+
+extension ContentView {
+    
+    struct flagImage: View {
+        var countryFlag: String
+        
+        var body: some View {
+            Image(self.countryFlag)
+                .renderingMode(.original)
+                .clipShape(Capsule())
+                .overlay(Capsule().stroke(Color.black, lineWidth: 1))
+                .shadow(color: .black, radius: 2)
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

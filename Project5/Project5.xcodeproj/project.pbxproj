@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6AAC2CB237505800052FCA9 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = E6AAC2CA237505800052FCA9 /* start.txt */; };
 		E6EABBE22372705B0082DADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EABBE12372705B0082DADC /* AppDelegate.swift */; };
 		E6EABBE42372705B0082DADC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EABBE32372705B0082DADC /* SceneDelegate.swift */; };
 		E6EABBE72372705B0082DADC /* Project5.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6EABBE52372705B0082DADC /* Project5.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E6AAC2CA237505800052FCA9 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 		E6EABBDE2372705B0082DADC /* Project5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6EABBE12372705B0082DADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6EABBE32372705B0082DADC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				E6EABBE82372705B0082DADC /* ContentView.swift */,
 				E6EABBEA2372705C0082DADC /* Assets.xcassets */,
 				E6EABBEF2372705C0082DADC /* LaunchScreen.storyboard */,
+				E6AAC2CA237505800052FCA9 /* start.txt */,
 				E6EABBF22372705C0082DADC /* Info.plist */,
 				E6EABBE52372705B0082DADC /* Project5.xcdatamodeld */,
 				E6EABBEC2372705C0082DADC /* Preview Content */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6EABBF12372705C0082DADC /* LaunchScreen.storyboard in Resources */,
+				E6AAC2CB237505800052FCA9 /* start.txt in Resources */,
 				E6EABBEE2372705C0082DADC /* Preview Assets.xcassets in Resources */,
 				E6EABBEB2372705C0082DADC /* Assets.xcassets in Resources */,
 			);

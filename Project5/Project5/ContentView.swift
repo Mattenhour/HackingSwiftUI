@@ -17,6 +17,8 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var playerScore = 0
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -29,8 +31,12 @@ struct ContentView: View {
                     Image(systemName: "\($0.count).circle")
                     Text($0)
                 }
+                Text("Scoring: \(playerScore)")
             }
         .navigationBarTitle(rootWord)
+        .navigationBarItems(leading: Button(action: startGame) {
+            Text("New Game")
+            })
         .onAppear(perform: startGame)
         .alert(isPresented: $showingError) {
             Alert(title: Text(errorTitle), message: Text(errorMessage),
@@ -59,11 +65,25 @@ struct ContentView: View {
             return
         }
         
+        guard isLessThan3(word: answer) else {
+            wordError(title: "Word too short", message: "Use words that are longer than 2 letters")
+            return
+        }
+        
+        guard isStartWord(word: answer) else {
+            wordError(title: "Used Starting word", message: "Can not use \(rootWord)")
+            return
+        }
+        
         usedWords.insert(answer, at: 0)
+        playerScore += answer.count
         newWord = ""
     }
     
     func startGame() {
+        playerScore = 0
+        usedWords.removeAll()
+        
         // 1. Find the URL for start.txt in our app bundle
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             // 2. Load start.txt into a string
@@ -108,6 +128,14 @@ struct ContentView: View {
                                                             language: "en")
         
         return misspelledRange.location == NSNotFound
+    }
+    
+    func isLessThan3(word: String) -> Bool {
+        return !(word.count < 3)
+    }
+    
+    func isStartWord(word: String) -> Bool {
+        return rootWord != word
     }
     
     func wordError(title: String, message: String) {

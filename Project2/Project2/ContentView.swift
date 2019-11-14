@@ -14,7 +14,9 @@ struct ContentView: View {
     
     @State private var showingScore = false
     @State private var scoreTitle = ""
-    @State private var score = 0
+    @State var score = 0
+    
+    @State var animationAmount = 0.0
     
     var body: some View {
         ZStack {
@@ -37,6 +39,7 @@ struct ContentView: View {
                     }) {
                         flagImage(countryFlag: self.countries[number])
                     }
+                    .rotation3DEffect(.degrees(self.animationAmount), axis: (x: 0, y: 1, z: 0))
                 }
                 Text("Current score: \(score)")
                 Spacer()
@@ -53,6 +56,11 @@ struct ContentView: View {
         if number == correctAnswer {
             scoreTitle = "Correct"
             score += 1
+            
+            withAnimation {
+                self.animationAmount += 360
+            }
+            
         } else {
             scoreTitle = "Wrong! That was the flag of \(countries[number])"
             score -= 1

@@ -13,7 +13,7 @@ class User: ObservableObject {
     @Published var lastName = "Baggins"
 }
 
-struct Day36: View {
+struct ObservedState: View {
     @ObservedObject private var user = User()
     
     var body: some View {
@@ -26,8 +26,8 @@ struct Day36: View {
     }
 }
 
-struct Day36_Previews: PreviewProvider {
+struct ObservedState_Previews: PreviewProvider {
     static var previews: some View {
-        Day36()
+        ObservedState()
     }
 }

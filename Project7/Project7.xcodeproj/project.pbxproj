@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E65E567D2381BF3E004367B9 /* Day36Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E567C2381BF3E004367B9 /* Day36Main.swift */; };
 		E65E568123821960004367B9 /* Day37Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E568023821960004367B9 /* Day37Main.swift */; };
+		E66C8CA92383941D00E96071 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C8CA82383941D00E96071 /* ExpenseItem.swift */; };
+		E66C8CAB2383946B00E96071 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C8CAA2383946B00E96071 /* Expenses.swift */; };
+		E66C8CAD23839C8E00E96071 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C8CAC23839C8E00E96071 /* AddView.swift */; };
 		E6E2EBE22380C45E008A4EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E2EBE12380C45E008A4EC7 /* AppDelegate.swift */; };
 		E6E2EBE42380C45E008A4EC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E2EBE32380C45E008A4EC7 /* SceneDelegate.swift */; };
 		E6E2EBE72380C45E008A4EC7 /* Project7.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6E2EBE52380C45E008A4EC7 /* Project7.xcdatamodeld */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		E65E567C2381BF3E004367B9 /* Day36Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day36Main.swift; sourceTree = "<group>"; };
 		E65E568023821960004367B9 /* Day37Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day37Main.swift; sourceTree = "<group>"; };
+		E66C8CA82383941D00E96071 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
+		E66C8CAA2383946B00E96071 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
+		E66C8CAC23839C8E00E96071 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		E6E2EBDE2380C45E008A4EC7 /* Project7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E2EBE12380C45E008A4EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6E2EBE32380C45E008A4EC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				E65E568023821960004367B9 /* Day37Main.swift */,
+				E66C8CA82383941D00E96071 /* ExpenseItem.swift */,
+				E66C8CAA2383946B00E96071 /* Expenses.swift */,
+				E66C8CAC23839C8E00E96071 /* AddView.swift */,
 			);
 			path = Day37;
 			sourceTree = "<group>";
@@ -180,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E66C8CAB2383946B00E96071 /* Expenses.swift in Sources */,
 				E6E2EBF92380C493008A4EC7 /* ObservedState.swift in Sources */,
 				E6E2EBE72380C45E008A4EC7 /* Project7.xcdatamodeld in Sources */,
 				E6E2EBE22380C45E008A4EC7 /* AppDelegate.swift in Sources */,
@@ -187,6 +197,8 @@
 				E6E2EBFB2380CC97008A4EC7 /* ShowHideView.swift in Sources */,
 				E6E2EBE92380C45E008A4EC7 /* ContentView.swift in Sources */,
 				E65E567D2381BF3E004367B9 /* Day36Main.swift in Sources */,
+				E66C8CAD23839C8E00E96071 /* AddView.swift in Sources */,
+				E66C8CA92383941D00E96071 /* ExpenseItem.swift in Sources */,
 				E6E2EBE42380C45E008A4EC7 /* SceneDelegate.swift in Sources */,
 				E65E568123821960004367B9 /* Day37Main.swift in Sources */,
 			);

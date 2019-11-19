@@ -10,20 +10,30 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var project7 = ["Day 36", "Day 37", "Day 38"]
-    @State private var destination = [Day36Main(), Day36Main(), Day36Main()]
     
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(0..<project7.count) { index in
-                        NavigationLink(destination: self.destination[index]) {
-                            Text("\(self.project7[index])")
+                    ForEach(project7, id: \.self) { exercise in
+                        NavigationLink(destination: self.LaunchView(exercise)) {
+                            Text(exercise)
                         }
                     }
                 }
             }
             .navigationBarTitle(Text("Master"))
+        }
+    }
+    
+    func LaunchView(_ exercise: String) -> AnyView{
+        switch exercise {
+        case "Day 36":
+            return AnyView(Day36Main())
+        case "Day 37":
+            return AnyView(Day37Main())
+        default:
+            return AnyView(Day37Main())
         }
     }
 }

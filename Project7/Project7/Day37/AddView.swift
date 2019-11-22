@@ -14,7 +14,10 @@ struct AddView: View {
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = ""
-
+    @State private var showError = false
+    
+    @State private var message = ""
+    
     static let types = ["Business", "Personal"]
     
     var body: some View {
@@ -37,9 +40,21 @@ struct AddView: View {
                     let item = ExpenseItem(name: self.name, type: self.type, amount: actualAmount)
                     self.expenses.items.append(item)
                     self.presentationMode.wrappedValue.dismiss()
+                } else {
+                    self.showError = true
+                    self.errorMessage()
                 }
             })
         }
+        .alert(isPresented: $showError) {
+            Alert(title: Text("Conversion error"), message: Text("\(self.message)"), dismissButton: .default(Text("Okay")))
+        }
+    }
+    
+    func errorMessage() {
+        self.message = "\(self.amount) is not a number"
+        self.name = ""
+        self.amount = ""
     }
 }
 

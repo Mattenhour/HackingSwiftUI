@@ -9,8 +9,53 @@
 import SwiftUI
 
 struct Day37Main: View {
+    @ObservedObject var expenses = Expenses()
+    @State private var showingAddExpense = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(expenses.items) { item in
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(item.name)
+                            .font(.headline)
+                        Text(item.type)
+                    }
+
+                    Spacer()
+                    Text("$\(item.amount)")
+                        .foregroundColor(self.amountColor(item.amount))
+                }
+            }
+            .onDelete(perform: removeItems)
+        }
+        .navigationBarTitle("iExpense")
+        .navigationBarItems(trailing:
+            Button(action: {
+                self.showingAddExpense = true
+                
+            }) {
+                Image(systemName: "plus")
+            }
+        )
+        .sheet(isPresented: $showingAddExpense) {
+            AddView(expenses: self.expenses)
+        }
+    }
+    
+    func removeItems(at offsets: IndexSet) {
+        expenses.items.remove(atOffsets: offsets)
+    }
+    
+    func amountColor(_ amount: Int) -> Color {
+        if amount < 10 {
+            return Color.green
+        } else if amount < 100 {
+            return Color.black
+        } else {
+            return Color.red
+        }
+        
     }
 }
 

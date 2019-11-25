@@ -31,29 +31,31 @@ struct MissionView: View {
                     Text(self.mission.description)
                         .padding()
                     
-                    ForEach(self.astronauts, id: \.role) { crewMember in
-                        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
+                    Group {
+                        ScrollView(.horizontal) {
                             HStack {
-                                Image(crewMember.astronaut.id)
-                                    .resizable()
-                                    .frame(width: 83, height: 60)
-                                    .clipShape(Capsule())
-                                    .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
+                                ForEach(self.astronauts, id: \.role) { crewMember in
+                                    NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
+                                        VStack(alignment: .center) {
+                                            Image(crewMember.astronaut.id)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 185)
+                                            .clipShape(Capsule())
+                                            .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
 
-                                VStack(alignment: .leading) {
-                                    Text(crewMember.astronaut.name)
-                                        .font(.headline)
-                                    Text(crewMember.role)
-                                        .foregroundColor(.secondary)
+                                            Text(crewMember.astronaut.name)
+                                                .font(.caption)
+
+                                            Text(crewMember.role)
+                                                .font(.caption)
+                                        }
+                                    }
+                                    .buttonStyle(PlainButtonStyle())
                                 }
-
-                                Spacer()
                             }
-                            .padding(.horizontal)
                         }
-                        .buttonStyle(PlainButtonStyle())
                     }
-                    
                     Spacer(minLength: 25)
                 }
             }

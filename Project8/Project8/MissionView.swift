@@ -15,6 +15,8 @@ struct MissionView: View {
         let astronaut: Astronaut
     }
     
+    @ObservedObject var sharedObj = SharedObjects()
+    
     let mission: Mission
     let astronauts: [CrewMember]
     
@@ -28,6 +30,9 @@ struct MissionView: View {
                         .frame(maxWidth: geometry.size.width * 0.70)
                         .padding(.top)
                     
+                    Text(self.mission.formattedLaunchDate)
+                        .padding()
+                    
                     Text(self.mission.description)
                         .padding()
                     
@@ -35,14 +40,14 @@ struct MissionView: View {
                         ScrollView(.horizontal) {
                             HStack {
                                 ForEach(self.astronauts, id: \.role) { crewMember in
-                                    NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
+                                    NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut, missions: self.sharedObj.missions)) {
                                         VStack(alignment: .center) {
                                             Image(crewMember.astronaut.id)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 185)
-                                            .clipShape(Capsule())
-                                            .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(width: 185)
+                                                .clipShape(Capsule())
+                                                .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
 
                                             Text(crewMember.astronaut.name)
                                                 .font(.caption)
@@ -83,6 +88,6 @@ struct MissionView_Previews: PreviewProvider {
     static let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     
     static var previews: some View {
-        MissionView(mission: missions[0], astronauts: astronauts)
+        MissionView(mission: missions[1], astronauts: astronauts)
     }
 }

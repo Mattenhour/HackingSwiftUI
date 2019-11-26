@@ -9,13 +9,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
-    let missions: [Mission] = Bundle.main.decode("missions.json")
+//    let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
+//    let missions: [Mission] = Bundle.main.decode("missions.json")
+    
+    @ObservedObject var sharedObj = SharedObjects()
     
     var body: some View {
         NavigationView {
-            List(missions) { mission in
-                NavigationLink(destination: MissionView(mission: mission, astronauts: self.astronauts)) {
+            List(sharedObj.missions) { mission in
+                NavigationLink(destination: MissionView(mission: mission, astronauts: self.sharedObj.astronauts)) {
                     Image(mission.image)
                         .resizable()
                         .scaledToFit()

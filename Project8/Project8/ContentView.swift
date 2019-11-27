@@ -13,6 +13,8 @@ struct ContentView: View {
 //    let missions: [Mission] = Bundle.main.decode("missions.json")
     
     @ObservedObject var sharedObj = SharedObjects()
+    @State var showDate = true
+    @State var navButtonText: String = ""
     
     var body: some View {
         NavigationView {
@@ -26,12 +28,37 @@ struct ContentView: View {
                     VStack(alignment: .leading) {
                         Text(mission.displayName)
                             .font(.headline)
-                        Text(mission.formattedLaunchDate)
+                        Text(self.showDate ? self.showLanchDate(mission) : self.showCrew(mission))
                     }
                 }
             }
             .navigationBarTitle("Moonshot")
+//            .navigationBarItems(trailing: Button(action: {
+//                // Actions
+//                self.showDate.toggle()
+//            }, label: { Text(self.showDate ? "Crew" : "Launch Date") })
+//            )
+            .navigationBarItems(trailing:
+                Toggle(isOn: $showDate, label: { Text("Show Launch Date") }))
         }
+    }
+    
+    func showLanchDate(_ mission: Mission) -> String {
+        return mission.formattedLaunchDate
+    }
+    
+    func showCrew(_ mission: Mission) -> String {
+        var temp: String = ""
+        let crewCount = mission.crew.count
+        
+        for (index, member) in mission.crew.enumerated() {
+            if index != crewCount - 1 {
+                temp += member.name + ", "
+            } else {
+                temp += member.name
+            }
+        }
+        return temp
     }
 }
 

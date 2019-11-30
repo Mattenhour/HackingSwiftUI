@@ -55,11 +55,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC949809238EF1E8001D9579 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA7C1E238A03F100CE5C7B /* astronauts.json */,
+				E6AA7C1F238A03F100CE5C7B /* missions.json */,
+				E6AA7C22238A046300CE5C7B /* Astronaut.swift */,
+				E6AA7C26238A080D00CE5C7B /* Mission.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CC94980A238EF2BF001D9579 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E63FE3FB238B427F00DB7EC6 /* AstronautView.swift */,
+				E63FE3F9238B32A800DB7EC6 /* MissionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCA54F72238EF4670008ACD9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA7C24238A058800CE5C7B /* Bundle-Decodable.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		E603FE532389C8B700443D6F = {
 			isa = PBXGroup;
 			children = (
-				E603FE5E2389C8B700443D6F /* Project8 */,
 				E603FE5D2389C8B700443D6F /* Products */,
+				E603FE5E2389C8B700443D6F /* Project8 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,16 +102,12 @@
 		E603FE5E2389C8B700443D6F /* Project8 */ = {
 			isa = PBXGroup;
 			children = (
-				E6AA7C1E238A03F100CE5C7B /* astronauts.json */,
-				E6AA7C1F238A03F100CE5C7B /* missions.json */,
+				CCA54F72238EF4670008ACD9 /* Service */,
+				CC949809238EF1E8001D9579 /* Model */,
+				CC94980A238EF2BF001D9579 /* Views */,
 				E603FE702389C8B900443D6F /* Info.plist */,
 				E603FE5F2389C8B700443D6F /* AppDelegate.swift */,
-				E6AA7C22238A046300CE5C7B /* Astronaut.swift */,
-				E63FE3FB238B427F00DB7EC6 /* AstronautView.swift */,
-				E6AA7C24238A058800CE5C7B /* Bundle-Decodable.swift */,
 				E603FE662389C8B700443D6F /* ContentView.swift */,
-				E6AA7C26238A080D00CE5C7B /* Mission.swift */,
-				E63FE3F9238B32A800DB7EC6 /* MissionView.swift */,
 				E603FE612389C8B700443D6F /* SceneDelegate.swift */,
 				E61C8E4D238CD6D200A2889E /* SharedObjects.swift */,
 				E603FE682389C8B900443D6F /* Assets.xcassets */,

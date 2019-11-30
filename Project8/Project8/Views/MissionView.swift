@@ -36,31 +36,8 @@ struct MissionView: View {
                     Text(self.mission.description)
                         .padding()
                     
-                    Group {
-                        ScrollView(.horizontal) {
-                            HStack {
-                                ForEach(self.astronauts, id: \.role) { crewMember in
-                                    NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut, missions: self.sharedObj.missions)) {
-                                        VStack(alignment: .center) {
-                                            Image(crewMember.astronaut.id)
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: 185)
-                                                .clipShape(Capsule())
-                                                .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
-
-                                            Text(crewMember.astronaut.name)
-                                                .font(.caption)
-
-                                            Text(crewMember.role)
-                                                .font(.caption)
-                                        }
-                                    }
-                                    .buttonStyle(PlainButtonStyle())
-                                }
-                            }
-                        }
-                    }
+                    missionCrew(crews: self.astronauts, sharedObj: self.sharedObj)
+                    
                     Spacer(minLength: 25)
                 }
             }
@@ -81,6 +58,41 @@ struct MissionView: View {
         }
         self.astronauts = matches
     }
+}
+
+extension MissionView {
+    
+    struct missionCrew: View {
+        var crews: [CrewMember]
+        @ObservedObject var sharedObj: SharedObjects
+        
+        var body: some View {
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach(self.crews, id: \.role) { member in
+                        NavigationLink(destination: AstronautView(astronaut: member.astronaut, missions: self.sharedObj.missions)) {
+                            VStack(alignment: .center) {
+                                Image(member.astronaut.id)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 185)
+                                    .clipShape(Capsule())
+                                    .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
+
+                                Text(member.astronaut.name)
+                                    .font(.caption)
+
+                                Text(member.role)
+                                    .font(.caption)
+                            }
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 struct MissionView_Previews: PreviewProvider {

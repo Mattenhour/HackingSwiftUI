@@ -52,7 +52,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Arc(startAngle: .degrees(-90), endAngle: .degrees(90), clockwise: true)
-            .strokeBorder(Color.blue, lineWidth: 40)
+                .strokeBorder(Color.blue, lineWidth: 40)
             
             Triangle()
                 .stroke(Color.red, style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round))

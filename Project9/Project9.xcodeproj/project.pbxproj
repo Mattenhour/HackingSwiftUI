@@ -14,6 +14,7 @@
 		E65F43D623931009008AA4BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E65F43D523931009008AA4BA /* Assets.xcassets */; };
 		E65F43D923931009008AA4BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E65F43D823931009008AA4BA /* Preview Assets.xcassets */; };
 		E65F43DC23931009008AA4BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E65F43DA23931009008AA4BA /* LaunchScreen.storyboard */; };
+		E685C3442396082B003C5095 /* Day44.swift in Sources */ = {isa = PBXBuildFile; fileRef = E685C3432396082B003C5095 /* Day44.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E65F43D823931009008AA4BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E65F43DB23931009008AA4BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E65F43DD23931009008AA4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E685C3432396082B003C5095 /* Day44.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day44.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +60,15 @@
 		E65F43CB23931005008AA4BA /* Project9 */ = {
 			isa = PBXGroup;
 			children = (
+				E65F43DD23931009008AA4BA /* Info.plist */,
 				E65F43CC23931005008AA4BA /* AppDelegate.swift */,
-				E65F43CE23931005008AA4BA /* SceneDelegate.swift */,
 				E65F43D323931005008AA4BA /* ContentView.swift */,
+				E685C3432396082B003C5095 /* Day44.swift */,
+				E65F43CE23931005008AA4BA /* SceneDelegate.swift */,
 				E65F43D523931009008AA4BA /* Assets.xcassets */,
 				E65F43DA23931009008AA4BA /* LaunchScreen.storyboard */,
-				E65F43DD23931009008AA4BA /* Info.plist */,
-				E65F43D023931005008AA4BA /* Project9.xcdatamodeld */,
 				E65F43D723931009008AA4BA /* Preview Content */,
+				E65F43D023931005008AA4BA /* Project9.xcdatamodeld */,
 			);
 			path = Project9;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				E65F43D223931005008AA4BA /* Project9.xcdatamodeld in Sources */,
 				E65F43CD23931005008AA4BA /* AppDelegate.swift in Sources */,
 				E65F43D423931005008AA4BA /* ContentView.swift in Sources */,
+				E685C3442396082B003C5095 /* Day44.swift in Sources */,
 				E65F43CF23931005008AA4BA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

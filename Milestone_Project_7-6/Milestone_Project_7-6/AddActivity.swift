@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AddActivity: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var activities: Activities
+//    @ObservedObject var activities: Activities
     
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)

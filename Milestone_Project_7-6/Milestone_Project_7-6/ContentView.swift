@@ -20,9 +20,27 @@ struct ContentView: View {
                         Text(activity.title)
                     }
                 }
+                .onDelete(perform: removeItems)
             }
             .navigationBarTitle("Activity Tracker")
+
+            .navigationBarItems(leading: EditButton(), trailing:
+                Button(action: {
+                    self.showingAddActivity = true
+
+                }) {
+                    Image(systemName: "plus")
+                }
+            )
+            
+            .sheet(isPresented: $showingAddActivity) {
+                AddActivity(activities: self.activities)
+            }
         }
+    }
+    
+    func removeItems(at offsets: IndexSet) {
+        activities.items.remove(atOffsets: offsets)
     }
 }
 

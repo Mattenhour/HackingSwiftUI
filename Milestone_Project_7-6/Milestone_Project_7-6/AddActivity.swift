@@ -10,15 +10,30 @@ import SwiftUI
 
 struct AddActivity: View {
     @Environment(\.presentationMode) var presentationMode
-//    @ObservedObject var activities: Activities
+    @ObservedObject var activities: Activities
+    @State private var title = ""
+    @State private var description = ""
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Form {
+                TextField("Title", text: $title)
+                
+                TextField("Description", text: $description)
+                
+            }
+            .navigationBarTitle("Add new activity")
+            .navigationBarItems(trailing: Button("Save") {
+                let activity = ActivityItem(title: self.title, description: self.description)
+                self.activities.items.append(activity)
+                self.presentationMode.wrappedValue.dismiss()
+            })
+        }
     }
 }
 
 struct AddActivity_Previews: PreviewProvider {
     static var previews: some View {
-        AddActivity()
+        AddActivity(activities: Activities())
     }
 }

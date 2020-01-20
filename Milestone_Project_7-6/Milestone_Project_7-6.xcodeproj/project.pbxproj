@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E600ACC923D5669400E1EBFA /* ActivityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600ACC823D5669400E1EBFA /* ActivityDetail.swift */; };
 		E66789EF23D14E9200D1FAE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66789EE23D14E9200D1FAE0 /* AppDelegate.swift */; };
 		E66789F123D14E9200D1FAE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66789F023D14E9200D1FAE0 /* SceneDelegate.swift */; };
 		E66789F423D14E9200D1FAE0 /* Milestone_Project_7_6.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E66789F223D14E9200D1FAE0 /* Milestone_Project_7_6.xcdatamodeld */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E600ACC823D5669400E1EBFA /* ActivityDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetail.swift; sourceTree = "<group>"; };
 		E66789EB23D14E9200D1FAE0 /* Milestone_Project_7-6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Milestone_Project_7-6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66789EE23D14E9200D1FAE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E66789F023D14E9200D1FAE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				E66789EE23D14E9200D1FAE0 /* AppDelegate.swift */,
 				E66789F523D14E9200D1FAE0 /* ContentView.swift */,
 				E6678A0B23D1555300D1FAE0 /* AddActivity.swift */,
+				E600ACC823D5669400E1EBFA /* ActivityDetail.swift */,
 				E66789F023D14E9200D1FAE0 /* SceneDelegate.swift */,
 				E66789F723D14E9300D1FAE0 /* Assets.xcassets */,
 				E66789FC23D14E9300D1FAE0 /* LaunchScreen.storyboard */,
@@ -165,6 +168,7 @@
 				E6678A0C23D1555300D1FAE0 /* AddActivity.swift in Sources */,
 				E66789F623D14E9200D1FAE0 /* ContentView.swift in Sources */,
 				E66789F123D14E9200D1FAE0 /* SceneDelegate.swift in Sources */,
+				E600ACC923D5669400E1EBFA /* ActivityDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

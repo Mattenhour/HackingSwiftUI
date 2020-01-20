@@ -13,5 +13,5 @@ struct ActivityItem: Identifiable, Codable {
     let id = UUID()
     let title: String
     let description: String
-    let count: Int = 0
+    var count: Int
 }

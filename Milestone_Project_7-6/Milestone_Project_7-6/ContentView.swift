@@ -15,9 +15,14 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
+                
                 ForEach(activities.items) { activity in
-                    VStack {
-                        Text(activity.title)
+                    NavigationLink(destination: ActivityDetail(activities: self.activities, activity: activity)) {
+                        HStack {
+                            Text(activity.title)
+                            Spacer()
+                            Text("Times: \(activity.count)")
+                        }
                     }
                 }
                 .onDelete(perform: removeItems)

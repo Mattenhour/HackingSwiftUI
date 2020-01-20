@@ -15,7 +15,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                
                 ForEach(activities.items) { activity in
                     NavigationLink(destination: ActivityDetail(activities: self.activities, activity: activity)) {
                         HStack {

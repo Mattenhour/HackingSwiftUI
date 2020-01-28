@@ -13,6 +13,9 @@ struct CheckoutView: View {
     @State private var confirmationMessage = ""
     @State private var showingConfirmation = false
     
+    @State private var errorMessage = ""
+    @State private var showingError = false
+    
     var body: some View {
         GeometryReader { geo in
             ScrollView {
@@ -29,6 +32,9 @@ struct CheckoutView: View {
                         self.placeOrder()
                     }
                     .padding()
+                    .alert(isPresented: self.$showingError) {
+                        Alert(title: Text("Error"), message: Text(self.errorMessage), dismissButton: .default(Text("Ok")))
+                    }
                 }
             }
         }
@@ -39,6 +45,7 @@ struct CheckoutView: View {
     }
     
     func placeOrder() {
+        print("order was pressed")
         guard let encoded = try? JSONEncoder().encode(order) else {
             print("Failed to encode order")
             return
@@ -54,6 +61,8 @@ struct CheckoutView: View {
             // handle the result here.
             guard let data = data else {
                 print("No data in response: \(error?.localizedDescription ?? "Unknown error").")
+                self.errorMessage = "\(error?.localizedDescription ?? "Unknown error")"
+                self.showingError = true
                 return
             }
             

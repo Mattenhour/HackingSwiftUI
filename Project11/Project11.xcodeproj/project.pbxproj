@@ -17,6 +17,7 @@
 		E6A2746C23E66DE700F9A17A /* addBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2746B23E66DE700F9A17A /* addBookView.swift */; };
 		E6A2746E23E6757400F9A17A /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2746D23E6757400F9A17A /* RatingView.swift */; };
 		E6A2747023E6790E00F9A17A /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2746F23E6790E00F9A17A /* EmojiRatingView.swift */; };
+		E6F732EA23E79E55000B44D6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F732E923E79E55000B44D6 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E6A2746B23E66DE700F9A17A /* addBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addBookView.swift; sourceTree = "<group>"; };
 		E6A2746D23E6757400F9A17A /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		E6A2746F23E6790E00F9A17A /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
+		E6F732E923E79E55000B44D6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				E6A2746D23E6757400F9A17A /* RatingView.swift */,
 				E676EFB523E3C7B000991D07 /* SceneDelegate.swift */,
 				E676EFBC23E3C7B300991D07 /* Assets.xcassets */,
+				E6F732E923E79E55000B44D6 /* DetailView.swift */,
 				E676EFC123E3C7B300991D07 /* LaunchScreen.storyboard */,
 				E676EFBE23E3C7B300991D07 /* Preview Content */,
 				E676EFB723E3C7B000991D07 /* Project11.xcdatamodeld */,
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E676EFB423E3C7B000991D07 /* AppDelegate.swift in Sources */,
+				E6F732EA23E79E55000B44D6 /* DetailView.swift in Sources */,
 				E676EFB623E3C7B000991D07 /* SceneDelegate.swift in Sources */,
 				E6A2747023E6790E00F9A17A /* EmojiRatingView.swift in Sources */,
 				E676EFBB23E3C7B000991D07 /* ContentView.swift in Sources */,

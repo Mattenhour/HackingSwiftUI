@@ -28,6 +28,7 @@ struct ContentView: View {
                         VStack(alignment: .leading) {
                             Text(book.title ?? "Unknown Title")
                                 .font(.headline)
+                                .foregroundColor(self.isBadBook(rating: book.rating) ? .red : .primary)
                             Text(book.author ?? "Unknown Author")
                                 .foregroundColor(.secondary)
                         }
@@ -58,6 +59,10 @@ struct ContentView: View {
 
         // save the context
         try? moc.save()
+    }
+    
+    func isBadBook(rating: Int16) -> Bool {
+        return rating == 1
     }
 }
 

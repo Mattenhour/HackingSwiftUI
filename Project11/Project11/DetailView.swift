@@ -38,6 +38,9 @@ struct DetailView: View {
                     .foregroundColor(.secondary)
                 
                 Text(self.book.review ?? "No review")
+                
+                Text(self.dateAdded(self.book))
+                    .font(.footnote)
                     .padding()
                 
                 RatingView(rating: .constant(Int(self.book.rating)))
@@ -64,6 +67,19 @@ struct DetailView: View {
         moc.delete(book)
         try? self.moc.save()
         presentationMode.wrappedValue.dismiss()
+    }
+    
+    func dateAdded(_ book: Book) -> String {
+        
+        guard let date = book.date else {
+            return "Unkown date"
+        }
+        
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateFormat = "MMM d, yyyy h:mm a"
+        
+        return formatter.string(from: date)
     }
 }
 

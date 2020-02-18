@@ -15,9 +15,12 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(friendFace.items) { person in
-                    Text(person.name)
+                    NavigationLink(destination: DetailView(friendFace: self.friendFace, user: person)) {
+                       UserCellView(user: person)
+                    }
                 }
             }
+            .navigationBarTitle(Text("FriendFace"))
         }
     }
 }

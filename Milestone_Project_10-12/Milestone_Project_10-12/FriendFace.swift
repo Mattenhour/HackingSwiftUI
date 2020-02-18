@@ -36,4 +36,12 @@ class FriendFace: ObservableObject {
         }.resume()
     }
     
+    
+    func findPerson(byId id: String) -> User? {
+        if let person = items.first(where: { $0.id == id }) {
+            return person
+        }
+        
+        return items.first
+    }
 }

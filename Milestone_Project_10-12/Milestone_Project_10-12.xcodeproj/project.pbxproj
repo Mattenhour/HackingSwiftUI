@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E63C17B423FB81C6003A77FD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C17B323FB81C6003A77FD /* DetailView.swift */; };
+		E63C17B623FB8BC9003A77FD /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C17B523FB8BC9003A77FD /* UserCellView.swift */; };
 		E6833B7823F7879300DEED7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6833B7723F7879300DEED7F /* AppDelegate.swift */; };
 		E6833B7A23F7879300DEED7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6833B7923F7879300DEED7F /* SceneDelegate.swift */; };
 		E6833B7D23F7879300DEED7F /* Milestone_Project_10_12.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6833B7B23F7879300DEED7F /* Milestone_Project_10_12.xcdatamodeld */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E63C17B323FB81C6003A77FD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		E63C17B523FB8BC9003A77FD /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
 		E6833B7423F7879300DEED7F /* Milestone_Project_10-12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Milestone_Project_10-12.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6833B7723F7879300DEED7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6833B7923F7879300DEED7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 				E6833B7723F7879300DEED7F /* AppDelegate.swift */,
 				E6833B7923F7879300DEED7F /* SceneDelegate.swift */,
 				E6833B7E23F7879300DEED7F /* ContentView.swift */,
+				E63C17B323FB81C6003A77FD /* DetailView.swift */,
+				E63C17B523FB8BC9003A77FD /* UserCellView.swift */,
 				E6833B9023F7966900DEED7F /* FriendFace.swift */,
 				E6833B8E23F7898700DEED7F /* Model.swift */,
 				E6833B8023F7879400DEED7F /* Assets.xcassets */,
@@ -158,9 +164,11 @@
 				E6833B7D23F7879300DEED7F /* Milestone_Project_10_12.xcdatamodeld in Sources */,
 				E6833B7823F7879300DEED7F /* AppDelegate.swift in Sources */,
 				E6833B9123F7966900DEED7F /* FriendFace.swift in Sources */,
+				E63C17B423FB81C6003A77FD /* DetailView.swift in Sources */,
 				E6833B7F23F7879300DEED7F /* ContentView.swift in Sources */,
 				E6833B8F23F7898700DEED7F /* Model.swift in Sources */,
 				E6833B7A23F7879300DEED7F /* SceneDelegate.swift in Sources */,
+				E63C17B623FB8BC9003A77FD /* UserCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

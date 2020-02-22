@@ -10,19 +10,24 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var friendFace = FriendFace()
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: User.entity(), sortDescriptors: []) var users: FetchedResults<User>
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(friendFace.items) { person in
-                    NavigationLink(destination: DetailView(friendFace: self.friendFace, user: person)) {
-                       UserCellView(user: person)
-                    }
+                ForEach(users, id: \.self) { user in
+//                    NavigationLink(destination: DetailView(friendFace: self.friendFace, user: person)) {
+//                       UserCellView(user: person)
+//
+//                    }
+                     Text(user.wrappedName)
                 }
             }
             .navigationBarTitle(Text("FriendFace"))
         }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

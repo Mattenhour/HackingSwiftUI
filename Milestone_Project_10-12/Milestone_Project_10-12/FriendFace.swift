@@ -7,11 +7,27 @@
 //
 
 import Foundation
+import CoreData
+import SwiftUI
 
 class FriendFace: ObservableObject {
-    @Published var items = [User]()
+    @Published var items = [JSONUser]()
+    let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     init() {
+        let request: NSFetchRequest = User.fetchRequest()
+        guard let users = try? moc.fetch(request) else {
+            return
+        }
+        if users.count == 0 {
+            print("Calling API")
+            fetchData()
+        } else {
+            print("Calling CoreData")
+        }
+    }
+    
+    private func fetchData() {
         let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json")!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -23,21 +39,46 @@ class FriendFace: ObservableObject {
                 return
             }
             
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            
-            if let decodedOrder = try? decoder.decode([User].self, from: data) {
+            do{
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                
+                let decodedUser = try decoder.decode([JSONUser].self, from: data)
+                
                 DispatchQueue.main.async {
-                    self.items = decodedOrder
+                    for du in decodedUser {
+                        let user = User(context: self.moc)
+                        
+                        user.id = du.id
+                        user.isActive = du.isActive
+                        user.name = du.name
+                        user.age = Int16(du.age)
+                        user.company = du.company
+                        user.email = du.email
+                        user.address = du.address
+                        user.about = du.about
+                        user.registered = du.registered
+                        user.tags = du.tags
+                        
+                        for uf in du.friends {
+                            let friend = Friend(context: self.moc)
+                            
+                            friend.id = uf.id
+                            friend.name = uf.name
+                            
+                            user.addToFriends(friend)
+                        }
+                    }
+                    try? self.moc.save()
                 }
-                return
+            } catch {
+                print(error)
             }
-
         }.resume()
     }
     
     
-    func findPerson(byId id: String) -> User? {
+    func findPerson(byId id: String) -> JSONUser? {
         if let person = items.first(where: { $0.id == id }) {
             return person
         }

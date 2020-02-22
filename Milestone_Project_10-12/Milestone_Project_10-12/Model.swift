@@ -7,9 +7,9 @@
 //
 
 import Foundation
-struct User: Codable, Identifiable {
+struct JSONUser: Codable, Identifiable {
     
-    struct Friend: Codable, Identifiable {
+    struct JSONFriend: Codable, Identifiable {
         let id: String
         let name: String
     }
@@ -24,7 +24,7 @@ struct User: Codable, Identifiable {
     var about: String
     var registered: Date
     var tags: [String]
-    var friends: [Friend]
+    var friends: [JSONFriend]
     
 //    var id: String
 //    var isActive: Bool

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E632B88523FF53BC00F72F2A /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632B88123FF53BC00F72F2A /* User+CoreDataClass.swift */; };
+		E632B88623FF53BC00F72F2A /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632B88223FF53BC00F72F2A /* User+CoreDataProperties.swift */; };
+		E632B88723FF53BC00F72F2A /* Friend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632B88323FF53BC00F72F2A /* Friend+CoreDataClass.swift */; };
+		E632B88823FF53BC00F72F2A /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632B88423FF53BC00F72F2A /* Friend+CoreDataProperties.swift */; };
 		E63C17B423FB81C6003A77FD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C17B323FB81C6003A77FD /* DetailView.swift */; };
 		E63C17B623FB8BC9003A77FD /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C17B523FB8BC9003A77FD /* UserCellView.swift */; };
 		E6833B7823F7879300DEED7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6833B7723F7879300DEED7F /* AppDelegate.swift */; };
@@ -18,9 +22,14 @@
 		E6833B8723F7879400DEED7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6833B8523F7879400DEED7F /* LaunchScreen.storyboard */; };
 		E6833B8F23F7898700DEED7F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6833B8E23F7898700DEED7F /* Model.swift */; };
 		E6833B9123F7966900DEED7F /* FriendFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6833B9023F7966900DEED7F /* FriendFace.swift */; };
+		E6AA9A732401BBD9005A6292 /* UserFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA9A722401BBD9005A6292 /* UserFriendView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E632B88123FF53BC00F72F2A /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		E632B88223FF53BC00F72F2A /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		E632B88323FF53BC00F72F2A /* Friend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		E632B88423FF53BC00F72F2A /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		E63C17B323FB81C6003A77FD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E63C17B523FB8BC9003A77FD /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
 		E6833B7423F7879300DEED7F /* Milestone_Project_10-12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Milestone_Project_10-12.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +43,7 @@
 		E6833B8823F7879400DEED7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6833B8E23F7898700DEED7F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E6833B9023F7966900DEED7F /* FriendFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendFace.swift; sourceTree = "<group>"; };
+		E6AA9A722401BBD9005A6292 /* UserFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFriendView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,11 +76,16 @@
 		E6833B7623F7879300DEED7F /* Milestone_Project_10-12 */ = {
 			isa = PBXGroup;
 			children = (
+				E632B88123FF53BC00F72F2A /* User+CoreDataClass.swift */,
+				E632B88223FF53BC00F72F2A /* User+CoreDataProperties.swift */,
+				E632B88323FF53BC00F72F2A /* Friend+CoreDataClass.swift */,
+				E632B88423FF53BC00F72F2A /* Friend+CoreDataProperties.swift */,
 				E6833B7723F7879300DEED7F /* AppDelegate.swift */,
 				E6833B7923F7879300DEED7F /* SceneDelegate.swift */,
 				E6833B7E23F7879300DEED7F /* ContentView.swift */,
 				E63C17B323FB81C6003A77FD /* DetailView.swift */,
 				E63C17B523FB8BC9003A77FD /* UserCellView.swift */,
+				E6AA9A722401BBD9005A6292 /* UserFriendView.swift */,
 				E6833B9023F7966900DEED7F /* FriendFace.swift */,
 				E6833B8E23F7898700DEED7F /* Model.swift */,
 				E6833B8023F7879400DEED7F /* Assets.xcassets */,
@@ -164,10 +179,15 @@
 				E6833B7D23F7879300DEED7F /* Milestone_Project_10_12.xcdatamodeld in Sources */,
 				E6833B7823F7879300DEED7F /* AppDelegate.swift in Sources */,
 				E6833B9123F7966900DEED7F /* FriendFace.swift in Sources */,
+				E632B88723FF53BC00F72F2A /* Friend+CoreDataClass.swift in Sources */,
 				E63C17B423FB81C6003A77FD /* DetailView.swift in Sources */,
+				E632B88823FF53BC00F72F2A /* Friend+CoreDataProperties.swift in Sources */,
 				E6833B7F23F7879300DEED7F /* ContentView.swift in Sources */,
+				E632B88523FF53BC00F72F2A /* User+CoreDataClass.swift in Sources */,
 				E6833B8F23F7898700DEED7F /* Model.swift in Sources */,
+				E6AA9A732401BBD9005A6292 /* UserFriendView.swift in Sources */,
 				E6833B7A23F7879300DEED7F /* SceneDelegate.swift in Sources */,
+				E632B88623FF53BC00F72F2A /* User+CoreDataProperties.swift in Sources */,
 				E63C17B623FB8BC9003A77FD /* UserCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

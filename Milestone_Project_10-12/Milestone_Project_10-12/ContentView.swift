@@ -17,17 +17,14 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(users, id: \.self) { user in
-//                    NavigationLink(destination: DetailView(friendFace: self.friendFace, user: person)) {
-//                       UserCellView(user: person)
-//
-//                    }
-                     Text(user.wrappedName)
+                    NavigationLink(destination: DetailView(user: user)) {
+                       UserCellView(user: user)
+                    }
                 }
             }
             .navigationBarTitle(Text("FriendFace"))
         }
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

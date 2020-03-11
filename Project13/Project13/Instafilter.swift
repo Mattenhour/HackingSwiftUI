@@ -14,10 +14,12 @@ struct Instafilter: View {
     @State private var image: Image?
     @State private var filterIntensity = 0.5
     
+    @State private var showingFilterSheet = false
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
+    @State private var processedImage: UIImage?
     
-    @State private var currentFilter = CIFilter.sepiaTone()
+    @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
     let context = CIContext()
     
     var body: some View {
@@ -60,13 +62,26 @@ struct Instafilter: View {
 
                 HStack {
                     Button("Change Filter") {
-                        // change filter
+                        self.showingFilterSheet = true
                     }
 
                     Spacer()
 
                     Button("Save") {
                         // save the picture
+                        guard let processedImage = self.processedImage else { return }
+
+                        let imageSaver = ImageSaver()
+                        
+                        imageSaver.successHandler = {
+                            print("Success!")
+                        }
+                        
+                        imageSaver.errorHandler = {
+                            print("oops: \($0.localizedDescription)")
+                        }
+                        
+                        imageSaver.writeToPhotoAlbum(image: processedImage)
                     }
                 }
             }
@@ -74,6 +89,18 @@ struct Instafilter: View {
             .navigationBarTitle("Instafilter")
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
                 ImagePicker(image: self.$inputImage)
+            }
+            .actionSheet(isPresented: $showingFilterSheet) {
+                ActionSheet(title: Text("Select a filter"), buttons: [
+                    .default(Text("Crystallize")) { self.setFilter(CIFilter.crystallize()) },
+                    .default(Text("Edges")) { self.setFilter(CIFilter.edges()) },
+                    .default(Text("Gaussian Blur")) { self.setFilter(CIFilter.gaussianBlur()) },
+                    .default(Text("Pixellate")) { self.setFilter(CIFilter.pixellate()) },
+                    .default(Text("Sepia Tone")) { self.setFilter(CIFilter.sepiaTone()) },
+                    .default(Text("Unsharp Mask")) { self.setFilter(CIFilter.unsharpMask()) },
+                    .default(Text("Vignette")) { self.setFilter(CIFilter.vignette()) },
+                    .cancel()
+                ])
             }
         }
     }
@@ -87,7 +114,18 @@ struct Instafilter: View {
     }
     
     func applyProcessing() {
-        currentFilter.intensity = Float(filterIntensity)
+        let inputKeys = currentFilter.inputKeys
+        
+        // Guards to allow filters to work with slider
+        if inputKeys.contains(kCIInputIntensityKey) {
+            currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey)
+        }
+        if inputKeys.contains(kCIInputRadiusKey) {
+            currentFilter.setValue(filterIntensity * 200, forKey: kCIInputRadiusKey)
+        }
+        if inputKeys.contains(kCIInputScaleKey) {
+            currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey)
+        }
         
         /*
         Convert output from our filter to a SwiftUI Image that can display in our view
@@ -104,7 +142,14 @@ struct Instafilter: View {
             
             // and convert that to a SwiftUI image
             image = Image(uiImage: uiImage)
+            
+            processedImage = uiImage
         }
+    }
+    
+    func setFilter(_ filter: CIFilter) {
+        currentFilter = filter
+        loadImage()
     }
 }
 

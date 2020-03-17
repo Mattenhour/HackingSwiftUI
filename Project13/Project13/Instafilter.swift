@@ -11,16 +11,22 @@ import CoreImage
 import CoreImage.CIFilterBuiltins
 
 struct Instafilter: View {
-    @State private var image: Image?
     @State private var filterIntensity = 0.5
     
     @State private var showingFilterSheet = false
     @State private var showingImagePicker = false
+    @State private var showingAlert = false
+    
+    @State private var image: Image?
     @State private var inputImage: UIImage?
     @State private var processedImage: UIImage?
     
     @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
+    
+    @State private var filterName = "Change Filter"
+    
     let context = CIContext()
+    
     
     var body: some View {
         let intensity = Binding<Double>(
@@ -61,7 +67,7 @@ struct Instafilter: View {
                 }.padding(.vertical)
 
                 HStack {
-                    Button("Change Filter") {
+                    Button("\(filterName)") {
                         self.showingFilterSheet = true
                     }
 
@@ -69,7 +75,11 @@ struct Instafilter: View {
 
                     Button("Save") {
                         // save the picture
-                        guard let processedImage = self.processedImage else { return }
+                        guard let processedImage = self.processedImage
+                        else {
+                            self.showingAlert = true
+                            return
+                        }
 
                         let imageSaver = ImageSaver()
                         
@@ -92,15 +102,19 @@ struct Instafilter: View {
             }
             .actionSheet(isPresented: $showingFilterSheet) {
                 ActionSheet(title: Text("Select a filter"), buttons: [
-                    .default(Text("Crystallize")) { self.setFilter(CIFilter.crystallize()) },
-                    .default(Text("Edges")) { self.setFilter(CIFilter.edges()) },
-                    .default(Text("Gaussian Blur")) { self.setFilter(CIFilter.gaussianBlur()) },
-                    .default(Text("Pixellate")) { self.setFilter(CIFilter.pixellate()) },
-                    .default(Text("Sepia Tone")) { self.setFilter(CIFilter.sepiaTone()) },
-                    .default(Text("Unsharp Mask")) { self.setFilter(CIFilter.unsharpMask()) },
-                    .default(Text("Vignette")) { self.setFilter(CIFilter.vignette()) },
+                    .default(Text("Crystallize")) { self.setFilter(CIFilter.crystallize()); self.filterName = "Crystallize"},
+                    .default(Text("Edges")) { self.setFilter(CIFilter.edges()); self.filterName = "Edges" },
+                    .default(Text("Gaussian Blur")) { self.setFilter(CIFilter.gaussianBlur()); self.filterName = "Gaussian Blu" },
+                    .default(Text("Pixellate")) { self.setFilter(CIFilter.pixellate()); self.filterName = "Pixellate" },
+                    .default(Text("Sepia Tone")) { self.setFilter(CIFilter.sepiaTone()); self.filterName = "Sepia Tone" },
+                    .default(Text("Unsharp Mask")) { self.setFilter(CIFilter.unsharpMask()); self.filterName = "Unsharp Mask" },
+                    .default(Text("Vignette")) { self.setFilter(CIFilter.vignette()); self.filterName = "Vignette" },
                     .cancel()
                 ])
+            }
+            
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Error: No image selected"), message: Text("Please select an image"), dismissButton: .default(Text("Okay")))
             }
         }
     }

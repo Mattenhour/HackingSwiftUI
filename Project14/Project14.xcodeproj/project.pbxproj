@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E600DBC2242A5E2D00805396 /* MKPointAnnotation-ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600DBC1242A5E2D00805396 /* MKPointAnnotation-ObservableObject.swift */; };
+		E600DBC4242A5F2E00805396 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600DBC3242A5F2E00805396 /* EditView.swift */; };
+		E600DBC6242A625F00805396 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600DBC5242A625F00805396 /* Result.swift */; };
 		E67693A12421936000E28966 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67693A02421936000E28966 /* MapView.swift */; };
 		E67856F624206C5B008219A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67856F524206C5B008219A5 /* AppDelegate.swift */; };
 		E67856F824206C5B008219A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67856F724206C5B008219A5 /* SceneDelegate.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E600DBC1242A5E2D00805396 /* MKPointAnnotation-ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-ObservableObject.swift"; sourceTree = "<group>"; };
+		E600DBC3242A5F2E00805396 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		E600DBC5242A625F00805396 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		E67693A02421936000E28966 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E67856F224206C5B008219A5 /* Project14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project14.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E67856F524206C5B008219A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +70,9 @@
 				E67856F524206C5B008219A5 /* AppDelegate.swift */,
 				E67856F724206C5B008219A5 /* SceneDelegate.swift */,
 				E67856FC24206C5B008219A5 /* ContentView.swift */,
+				E600DBC5242A625F00805396 /* Result.swift */,
+				E600DBC1242A5E2D00805396 /* MKPointAnnotation-ObservableObject.swift */,
+				E600DBC3242A5F2E00805396 /* EditView.swift */,
 				E67856FE24206C5D008219A5 /* Assets.xcassets */,
 				E678570324206C5D008219A5 /* LaunchScreen.storyboard */,
 				E678570624206C5D008219A5 /* Info.plist */,
@@ -153,9 +162,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E67856F624206C5B008219A5 /* AppDelegate.swift in Sources */,
+				E600DBC2242A5E2D00805396 /* MKPointAnnotation-ObservableObject.swift in Sources */,
 				E67856F824206C5B008219A5 /* SceneDelegate.swift in Sources */,
 				E67693A12421936000E28966 /* MapView.swift in Sources */,
+				E600DBC4242A5F2E00805396 /* EditView.swift in Sources */,
 				E67856FD24206C5B008219A5 /* ContentView.swift in Sources */,
+				E600DBC6242A625F00805396 /* Result.swift in Sources */,
 				E67856FB24206C5B008219A5 /* Project14.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,8 @@ import MapKit
 import SwiftUI
 
 struct MapContentView: View {
+    
+    // testing
     @State private var centerCoordinate = CLLocationCoordinate2D()
     @State private var locations = [CodableMKPointAnnotation]()
     @State private var selectedPlace: MKPointAnnotation?

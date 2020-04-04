@@ -30,16 +30,16 @@ struct ContentView: View {
                             .font(.headline)
                         Text(self.showDate ? self.showLanchDate(mission) : self.showCrew(mission))
                     }
+                    .accessibilityElement(children: .ignore)
+                    .accessibility(label: Text("\(mission.displayName). \(mission.formattedLaunchDate)"))
                 }
             }
             .navigationBarTitle("Moonshot")
-//            .navigationBarItems(trailing: Button(action: {
-//                // Actions
-//                self.showDate.toggle()
-//            }, label: { Text(self.showDate ? "Crew" : "Launch Date") })
-//            )
             .navigationBarItems(trailing:
-                Toggle(isOn: $showDate, label: { Text("Show Launch Date") }))
+                Toggle(isOn: $showDate, label: {
+                    Text("Show Launch Date")
+                }
+            ))
         }
     }
     

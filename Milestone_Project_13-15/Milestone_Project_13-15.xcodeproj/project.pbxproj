@@ -22,6 +22,7 @@
 		E641EDDB243AB27A00A55499 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641EDD7243AB27A00A55499 /* Person+CoreDataProperties.swift */; };
 		E6450118243D6C8900E0A1FC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6450117243D6C8900E0A1FC /* ImagePicker.swift */; };
 		E645011A243D6D6A00E0A1FC /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6450119243D6D6A00E0A1FC /* ImageSaver.swift */; };
+		E65A7329243EB23A00F39757 /* addImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65A7328243EB23A00F39757 /* addImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		E641EDD7243AB27A00A55499 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		E6450117243D6C8900E0A1FC /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E6450119243D6D6A00E0A1FC /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		E65A7328243EB23A00F39757 /* addImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				E641EDBB243AA8CB00A55499 /* ContentView.swift */,
 				E620E306243C0DB400A19DD1 /* DetailView.swift */,
 				E620E308243C0E1900A19DD1 /* PhotoCellView.swift */,
+				E65A7328243EB23A00F39757 /* addImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				E641EDD8243AB27A00A55499 /* Photo+CoreDataClass.swift in Sources */,
 				E641EDBA243AA8CB00A55499 /* Milestone_Project_13_15.xcdatamodeld in Sources */,
 				E620E309243C0E1900A19DD1 /* PhotoCellView.swift in Sources */,
+				E65A7329243EB23A00F39757 /* addImageView.swift in Sources */,
 				E641EDDB243AB27A00A55499 /* Person+CoreDataProperties.swift in Sources */,
 				E645011A243D6D6A00E0A1FC /* ImageSaver.swift in Sources */,
 				E6450118243D6C8900E0A1FC /* ImagePicker.swift in Sources */,

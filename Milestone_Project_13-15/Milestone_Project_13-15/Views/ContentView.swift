@@ -12,6 +12,22 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: Photo.entity(), sortDescriptors: []) var photos: FetchedResults<Photo>
     
+    @State private var showingImagePicker = false
+    @State private var showingPersonForm = false
+    
+    @State private var inputImage: UIImage?
+    
+    var addButton: some View {
+        Button(action: {
+            self.showingImagePicker = true
+        }) {
+            Image(systemName: "plus")
+        }
+        .sheet(isPresented: $showingImagePicker, onDismiss: showPersonForm) {
+            ImagePicker(image: self.$inputImage)
+        }
+    }
+    
     var body: some View {
         NavigationView {
             List {
@@ -22,8 +38,20 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle(Text("Name Reminder"))
+            .navigationBarItems(trailing: addButton)
+            .sheet(isPresented: $showingPersonForm) {
+                // Safe because we guard let?
+                addImageView(inputImage: self.inputImage!).environment(\.managedObjectContext, self.moc)
+            }
         }
     }
+    
+    func showPersonForm() {
+        guard inputImage != nil else { return }
+        
+        showingPersonForm = true
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

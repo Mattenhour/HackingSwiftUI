@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct DetailView: View {
-    var photo: Photo
+    var person: Person
     
     var body: some View {
         Text("DetailView")
@@ -18,6 +18,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(photo: Photo())
+        DetailView(person: Person())
     }
 }

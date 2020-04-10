@@ -9,17 +9,17 @@
 import SwiftUI
 
 struct PhotoCellView: View {
-    var photo: Photo
+    var person: Person
     
     var body: some View {
         HStack {
-            Text("\(photo.wrappedPerson.wrappedLastName), \(photo.wrappedPerson.wrappedFirstName)")
+            Text("\(person.wrappedLastName), \(person.wrappedFirstName)")
         }
     }
 }
 
 struct PhotoCellView_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoCellView(photo: Photo())
+        PhotoCellView(person: Person())
     }
 }

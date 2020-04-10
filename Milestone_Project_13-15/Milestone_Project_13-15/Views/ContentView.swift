@@ -10,7 +10,10 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Photo.entity(), sortDescriptors: []) var photos: FetchedResults<Photo>
+    @FetchRequest(entity: Person.entity(), sortDescriptors: [
+        NSSortDescriptor(keyPath: \Person.firstName, ascending: true),
+        NSSortDescriptor(keyPath: \Person.lastName, ascending: true)
+    ]) var people: FetchedResults<Person>
     
     @State private var showingImagePicker = false
     @State private var showingPersonForm = false
@@ -31,9 +34,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(photos, id: \.self) { photo in
-                    NavigationLink(destination: DetailView(photo: photo)) {
-                        PhotoCellView(photo: photo)
+                ForEach(people, id: \.self) { person in
+                    NavigationLink(destination: DetailView(person: person)) {
+                        PhotoCellView(person: person)
                     }
                 }
             }

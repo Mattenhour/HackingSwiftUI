@@ -43,7 +43,7 @@
 		E65A7328243EB23A00F39757 /* addImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addImageView.swift; sourceTree = "<group>"; };
 		E65DF1E42440FD6F0052FC67 /* FileManager+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+UIImage.swift"; sourceTree = "<group>"; };
 		E65DF1EE24410D030052FC67 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		E65DF1EF24410D030052FC67 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		E65DF1EF24410D030052FC67 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Person+CoreDataProperties.swift"; path = "Milestone_Project_13-15/Views/Person+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		E65DF1F024410D030052FC67 /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		E65DF1F124410D030052FC67 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */

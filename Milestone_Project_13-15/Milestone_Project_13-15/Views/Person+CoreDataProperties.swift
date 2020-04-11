@@ -25,4 +25,5 @@ extension Person {
     var wrappedID: UUID { id ?? UUID() }
     var wrappedLastName: String { lastName ?? "Unknown last" }
     var wrappedFirstName: String { firstName ?? "Unknown first" }
+    var wrappedPhoto: Photo { photo ?? Photo() }
 }

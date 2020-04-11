@@ -39,9 +39,10 @@ struct ContentView: View {
                         PhotoCellView(person: person)
                     }
                 }
+                .onDelete(perform: deletePerson)
             }
             .navigationBarTitle(Text("Name Reminder"))
-            .navigationBarItems(trailing: addButton)
+            .navigationBarItems(leading: EditButton(), trailing: addButton)
             .sheet(isPresented: $showingPersonForm) {
                 // Safe because we guard let?
                 addImageView(inputImage: self.inputImage!).environment(\.managedObjectContext, self.moc)
@@ -53,6 +54,20 @@ struct ContentView: View {
         guard inputImage != nil else { return }
         
         showingPersonForm = true
+    }
+    
+    func deletePerson(at offsets: IndexSet){
+        for offset in offsets {
+            // find this book in our fetch request
+            let person = people[offset]
+            let photo = person.wrappedPhoto
+            
+            moc.delete(person)
+            moc.delete(photo)
+            FileManager.default.deleteImage(at: photo.wrappedID.uuidString)
+        }
+        
+        try? moc.save()
     }
     
 }

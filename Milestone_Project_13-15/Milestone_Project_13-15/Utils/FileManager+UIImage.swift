@@ -37,4 +37,26 @@ extension FileManager {
         }
     }
     
+    func loadImage(with filePath: String, completion: (UIImage?,Error?) -> Void) {
+        guard let documentsDirectory = documentsDirectory else { return }
+        
+        let fileUrl = documentsDirectory.appendingPathComponent(filePath)
+        
+        let image = UIImage(contentsOfFile: fileUrl.path)
+        
+        completion(image, nil)
+    }
+    
+    func deleteImage(at filePath: String,  completion: ((Error?) -> Void)? = nil) {
+        guard let documentsDirectory = documentsDirectory else { return }
+        
+        let fileUrl = documentsDirectory.appendingPathComponent(filePath)
+        
+        do {
+            try removeItem(at: fileUrl)
+            completion?(nil)
+        } catch {
+            completion?(error)
+        }
+    }
 }

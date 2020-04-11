@@ -66,9 +66,6 @@ struct addImageView: View {
                 .disabled(firstName.isEmpty)
             }
             
-//            Button("Dismiss") {
-//                self.presentationMode.wrappedValue.dismiss()
-//            }
         }
     }
 }

@@ -4,6 +4,8 @@
         <attribute name="firstName" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="person" inverseEntity="Photo"/>
     </entity>
     <entity name="Photo" representedClassName="Photo" syncable="YES">
@@ -11,7 +13,7 @@
         <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="photo" inverseEntity="Person"/>
     </entity>
     <elements>
-        <element name="Person" positionX="-218.421875" positionY="-93.8359375" width="128" height="103"/>
+        <element name="Person" positionX="-218.421875" positionY="-93.8359375" width="128" height="133"/>
         <element name="Photo" positionX="-437.19921875" positionY="-61.50390625" width="128" height="73"/>
     </elements>
 </model>

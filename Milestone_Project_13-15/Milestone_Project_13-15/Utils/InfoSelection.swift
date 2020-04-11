@@ -1,16 +1,13 @@
 //
-//  Photo+CoreDataClass.swift
+//  InfoSelection.swift
 //  Milestone_Project_13-15
 //
 //  Created by Matt Ridenhour on 4/11/20.
 //  Copyright © 2020 Matt Ridenhour. All rights reserved.
 //
-//
 
 import Foundation
-import CoreData
-
-@objc(Photo)
-public class Photo: NSManagedObject {
-
+enum PersonSelection: String, CaseIterable {
+    case name = "Full name"
+    case map = "Location met"
 }

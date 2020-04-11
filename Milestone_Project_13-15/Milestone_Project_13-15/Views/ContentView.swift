@@ -6,6 +6,8 @@
 //  Copyright © 2020 Matt Ridenhour. All rights reserved.
 //
 
+import CoreData
+import CoreLocation
 import SwiftUI
 
 struct ContentView: View {
@@ -19,6 +21,8 @@ struct ContentView: View {
     @State private var showingPersonForm = false
     
     @State private var inputImage: UIImage?
+    
+    let locationFetcher = LocationFetcher()
     
     var addButton: some View {
         Button(action: {
@@ -45,8 +49,9 @@ struct ContentView: View {
             .navigationBarItems(leading: EditButton(), trailing: addButton)
             .sheet(isPresented: $showingPersonForm) {
                 // Safe because we guard let?
-                addImageView(inputImage: self.inputImage!).environment(\.managedObjectContext, self.moc)
+                addImageView(inputImage: self.inputImage!, location: self.locationFetcher.lastKnownLocation).environment(\.managedObjectContext, self.moc)
             }
+            .onAppear(perform: startFetchingLocation)
         }
     }
     
@@ -68,6 +73,11 @@ struct ContentView: View {
         }
         
         try? moc.save()
+    }
+    
+    func startFetchingLocation() {
+        print("in startFetchingLocation")
+        locationFetcher.start()
     }
     
 }

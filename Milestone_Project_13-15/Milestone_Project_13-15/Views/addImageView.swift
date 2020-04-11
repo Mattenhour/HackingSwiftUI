@@ -6,6 +6,7 @@
 //  Copyright © 2020 Matt Ridenhour. All rights reserved.
 //
 
+import CoreLocation
 import SwiftUI
 
 struct addImageView: View {
@@ -16,6 +17,7 @@ struct addImageView: View {
     @State private var firstName = ""
     
     let inputImage: UIImage
+    let location: CLLocationCoordinate2D?
     let uuid = UUID()
     
     var saveButton: some View {
@@ -27,6 +29,8 @@ struct addImageView: View {
                     
                     let person = Person(context: self.moc)
                     person.id = UUID()
+                    person.latitude = self.location?.latitude ?? 0
+                    person.longitude = self.location?.longitude ?? 0
                     person.lastName = self.lastName
                     person.firstName = self.firstName
                     
@@ -65,13 +69,12 @@ struct addImageView: View {
                 .disabled(lastName.isEmpty)
                 .disabled(firstName.isEmpty)
             }
-            
         }
     }
 }
 
 struct addImageView_Previews: PreviewProvider {
     static var previews: some View {
-        addImageView(inputImage: UIImage())
+        addImageView(inputImage: UIImage(), location: nil)
     }
 }

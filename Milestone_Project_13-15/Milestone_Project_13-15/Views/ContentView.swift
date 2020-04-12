@@ -13,8 +13,8 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: Person.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \Person.firstName, ascending: true),
-        NSSortDescriptor(keyPath: \Person.lastName, ascending: true)
+        NSSortDescriptor(keyPath: \Person.lastName, ascending: true),
+        NSSortDescriptor(keyPath: \Person.firstName, ascending: true)
     ]) var people: FetchedResults<Person>
     
     @State private var showingImagePicker = false
@@ -57,7 +57,7 @@ struct ContentView: View {
     
     func showPersonForm() {
         guard inputImage != nil else { return }
-        
+        print(inputImage != nil)
         showingPersonForm = true
     }
     

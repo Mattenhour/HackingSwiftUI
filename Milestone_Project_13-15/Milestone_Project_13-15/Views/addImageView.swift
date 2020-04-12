@@ -47,11 +47,11 @@ struct addImageView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ZStack(alignment: .bottomTrailing) {
                 GeometryReader { geo in
-                    Rectangle()
-                        .fill(Color.secondary)
+//                    Rectangle()
+//                        .fill(Color.secondary)
                     
                     //display the image
                     Image(uiImage: self.inputImage)

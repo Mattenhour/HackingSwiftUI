@@ -23,7 +23,9 @@ struct personName: View {
                 
                 Text("\(self.firstName)")
                     .fontWeight(.light)
+                Spacer()
             }
+            .padding(.top)
             .padding(.bottom)
             
             HStack {
@@ -33,6 +35,7 @@ struct personName: View {
                 
                 Text("\(self.lastName)")
                     .fontWeight(.light)
+                Spacer()
             }
         }
     }

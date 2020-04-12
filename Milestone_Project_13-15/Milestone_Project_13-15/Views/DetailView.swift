@@ -19,18 +19,6 @@ struct DetailView: View {
         .init(latitude: person.latitude, longitude: person.longitude)
     }
     
-    func loadImage() {
-        let photoUrl = person.wrappedPhoto.wrappedID.uuidString
-        
-        FileManager.default.loadImage(with: photoUrl) { (image, error) in
-            if let error = error {
-                print(error)
-            } else if let image = image {
-                self.image = Image(uiImage: image)
-            }
-        }
-    }
-    
     var body: some View {
             VStack(alignment: .leading) {
                 ZStack(alignment: .bottomTrailing) {
@@ -58,6 +46,18 @@ struct DetailView: View {
             }
         .navigationBarTitle(Text("\(person.wrappedFirstName)'s info"), displayMode: .inline)
         .onAppear(perform: loadImage)
+    }
+    
+    func loadImage() {
+        let photoUrl = person.wrappedPhoto.wrappedID.uuidString
+        
+        FileManager.default.loadImage(with: photoUrl) { (image, error) in
+            if let error = error {
+                print(error)
+            } else if let image = image {
+                self.image = Image(uiImage: image)
+            }
+        }
     }
 }
 

@@ -11,8 +11,7 @@ import SwiftUI
 
 struct DetailView: View {
     @State private var image: Image?
-    @State private var selectedInfo = 0
-    var personInfoOptions = ["Full name", "Location met"]
+    @State private var selectedInfo: PersonInfo = PersonInfo.name
     
     var person: Person
     
@@ -32,29 +31,6 @@ struct DetailView: View {
         }
     }
     
-    var personName: some View {
-        Group {
-            HStack {
-                Text("First Name:")
-                    .bold()
-                    .padding(.leading, 10)
-                
-                Text("\(self.person.wrappedFirstName)")
-                    .fontWeight(.light)
-            }
-            .padding(.bottom)
-            
-            HStack {
-                Text("Last Name:")
-                .bold()
-                .padding(.leading, 10)
-                
-                Text("\(self.person.wrappedLastName)")
-                    .fontWeight(.light)
-            }
-        }
-    }
-    
     var body: some View {
             VStack(alignment: .leading) {
                 ZStack(alignment: .bottomTrailing) {
@@ -65,17 +41,17 @@ struct DetailView: View {
                 
                 Section(header: Text("Select \(person.wrappedFirstName)'s info")) {
                     Picker("Person info", selection: $selectedInfo) {
-                        ForEach(0..<personInfoOptions.count) { index in
-                            Text(self.personInfoOptions[index]).tag(index)
+                        ForEach(PersonInfo.allCases) {
+                            Text($0.name).tag($0)
                         }
                     }.pickerStyle(SegmentedPickerStyle())
                 }
                 
-                if selectedInfo == 0 {
-                    personName
-                } else if selectedInfo == 1 {
-                    MapView(location: personLocation)
-                        .frame(height: 300)
+                
+                if selectedInfo == .name {
+                    personName(firstName: person.wrappedFirstName, lastName: person.wrappedLastName)
+                } else if selectedInfo == .map {
+                    personMap(personLocation: personLocation)
                 }
                 
                 Spacer()

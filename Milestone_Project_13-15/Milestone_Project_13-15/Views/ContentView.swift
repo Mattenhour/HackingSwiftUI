@@ -76,7 +76,6 @@ struct ContentView: View {
     }
     
     func startFetchingLocation() {
-        print("in startFetchingLocation")
         locationFetcher.start()
     }
     

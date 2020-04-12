@@ -20,30 +20,33 @@ struct DetailView: View {
     }
     
     var body: some View {
-            VStack(alignment: .leading) {
-                ZStack(alignment: .bottomTrailing) {
+        VStack(alignment: .leading) {
+            ZStack(alignment: .bottomTrailing) {
+                GeometryReader { geo in
                     self.image?
                         .resizable()
-                        .scaledToFit()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: geo.size.width)
                 }
-                
-                Section(header: Text("Select \(person.wrappedFirstName)'s info")) {
-                    Picker("Person info", selection: $selectedInfo) {
-                        ForEach(PersonInfo.allCases) {
-                            Text($0.name).tag($0)
-                        }
-                    }.pickerStyle(SegmentedPickerStyle())
-                }
-                
-                
-                if selectedInfo == .name {
-                    personName(firstName: person.wrappedFirstName, lastName: person.wrappedLastName)
-                } else if selectedInfo == .map {
-                    personMap(personLocation: personLocation)
-                }
-                
-                Spacer()
             }
+            
+            Section(header: Text("Select \(person.wrappedFirstName)'s info")) {
+                Picker("Person info", selection: $selectedInfo) {
+                    ForEach(PersonInfo.allCases) {
+                        Text($0.name).tag($0)
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
+            }
+            
+            
+            if selectedInfo == .name {
+                personName(firstName: person.wrappedFirstName, lastName: person.wrappedLastName)
+            } else if selectedInfo == .map {
+                personMap(personLocation: personLocation)
+            }
+            
+            Spacer()
+        }
         .navigationBarTitle(Text("\(person.wrappedFirstName)'s info"), displayMode: .inline)
         .onAppear(perform: loadImage)
     }

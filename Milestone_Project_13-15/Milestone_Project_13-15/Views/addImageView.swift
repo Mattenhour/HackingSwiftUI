@@ -48,14 +48,17 @@ struct addImageView: View {
     
     var body: some View {
         VStack {
-            ZStack {
-                Rectangle()
-                    .fill(Color.secondary)
-                
-                //display the image
-                Image(uiImage: inputImage)
-                    .resizable()
-                    .scaledToFit()
+            ZStack(alignment: .bottomTrailing) {
+                GeometryReader { geo in
+                    Rectangle()
+                        .fill(Color.secondary)
+                    
+                    //display the image
+                    Image(uiImage: self.inputImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: geo.size.width)
+                }
             }
             
             Form {

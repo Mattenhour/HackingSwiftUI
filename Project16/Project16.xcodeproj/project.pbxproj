@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6598313244CCF0600B63897 /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6598312244CCF0600B63897 /* ContextMenu.swift */; };
+		E6598315244CCFE600B63897 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6598314244CCFE500B63897 /* Notifications.swift */; };
 		E66878B824468DCC00C85A17 /* BasicResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66878B724468DCC00C85A17 /* BasicResult.swift */; };
 		E66878BA244698CE00C85A17 /* ObserObjectChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66878B9244698CE00C85A17 /* ObserObjectChanges.swift */; };
 		E66878BE24469ED000C85A17 /* ImageInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66878BD24469ED000C85A17 /* ImageInterpolation.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E6598312244CCF0600B63897 /* ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
+		E6598314244CCFE500B63897 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		E66878B724468DCC00C85A17 /* BasicResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicResult.swift; sourceTree = "<group>"; };
 		E66878B9244698CE00C85A17 /* ObserObjectChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserObjectChanges.swift; sourceTree = "<group>"; };
 		E66878BD24469ED000C85A17 /* ImageInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInterpolation.swift; sourceTree = "<group>"; };
@@ -49,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6598311244CCEE000B63897 /* Features Learning */ = {
+			isa = PBXGroup;
+			children = (
+				E6598312244CCF0600B63897 /* ContextMenu.swift */,
+				E6598314244CCFE500B63897 /* Notifications.swift */,
+			);
+			path = "Features Learning";
+			sourceTree = "<group>";
+		};
 		E66878B624468D2400C85A17 /* Result Learning */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				E6EA29A424454D41009FE3E8 /* Env Tab learning */,
+				E6598311244CCEE000B63897 /* Features Learning */,
 				E66878B624468D2400C85A17 /* Result Learning */,
 				E6EA298D2445474D009FE3E8 /* AppDelegate.swift */,
 				E6EA29942445474D009FE3E8 /* ContentView.swift */,
@@ -180,7 +194,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6598313244CCF0600B63897 /* ContextMenu.swift in Sources */,
 				E6EA298E2445474D009FE3E8 /* AppDelegate.swift in Sources */,
+				E6598315244CCFE600B63897 /* Notifications.swift in Sources */,
 				E6EA29932445474D009FE3E8 /* Project16.xcdatamodeld in Sources */,
 				E6EA29A624455145009FE3E8 /* EnvLearning.swift in Sources */,
 				E6EA29A8244552C4009FE3E8 /* TabLearning.swift in Sources */,

@@ -12,7 +12,10 @@ class Prospect: Identifiable, Codable {
     let id = UUID()
     var name = "Anonymous"
     var emailAddress = ""
-    var isContacted = false
+    
+    // fileprivate(set) will allow isContacted to be read from anywhere, but can
+    // can only changed from with Prospect.swift
+    fileprivate(set) var isContacted = false
 }
 
 class Prospects: ObservableObject {
@@ -20,5 +23,12 @@ class Prospects: ObservableObject {
     
     init() {
         self.people = []
+    }
+    
+    func toggle(_ prospect: Prospect) {
+        // Call objectWillChange.send() first before changing your property
+        // to ensure SwiftUI gets its animations correct
+        objectWillChange.send()
+        prospect.isContacted.toggle()
     }
 }

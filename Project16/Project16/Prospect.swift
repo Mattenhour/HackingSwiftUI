@@ -19,10 +19,37 @@ class Prospect: Identifiable, Codable {
 }
 
 class Prospects: ObservableObject {
-    @Published var people: [Prospect]
+    @Published private(set) var people: [Prospect]
+
+    static let saveKey = "SavedData"
     
     init() {
         self.people = []
+        
+        let filename = getDocumentsDirectory().appendingPathComponent(Self.saveKey)
+        
+        do {
+            let data = try Data(contentsOf: filename)
+            people = try JSONDecoder().decode([Prospect].self, from: data)
+        } catch {
+             print("Can't load saved data")
+        }
+    }
+    
+    
+    private func save() {
+        let filename = getDocumentsDirectory().appendingPathComponent(Self.saveKey)
+        do {
+        let data = try JSONEncoder().encode(people)
+        try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
+        } catch {
+            print("Can't save data in the documents directory")
+        }
+    }
+    
+    func add(_ prospect: Prospect) {
+        people.append(prospect)
+        save()
     }
     
     func toggle(_ prospect: Prospect) {
@@ -30,5 +57,11 @@ class Prospects: ObservableObject {
         // to ensure SwiftUI gets its animations correct
         objectWillChange.send()
         prospect.isContacted.toggle()
+        save()
+    }
+    
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
 }

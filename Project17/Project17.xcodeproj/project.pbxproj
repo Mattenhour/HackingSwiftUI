@@ -16,6 +16,9 @@
 		E60DA21C245A6EDD00327FBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60DA21A245A6EDD00327FBA /* LaunchScreen.storyboard */; };
 		E663CC5D246100BF00C08E1C /* GesturesLearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E663CC5C246100BF00C08E1C /* GesturesLearning.swift */; };
 		E663CC5F24610A3900C08E1C /* HapticsLearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E663CC5E24610A3900C08E1C /* HapticsLearning.swift */; };
+		E6CC7C31246245C300EA139C /* TriggeringEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC7C30246245C300EA139C /* TriggeringEvents.swift */; };
+		E6CC7C3324624CA100EA139C /* NotifiedWhenInBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC7C3224624CA100EA139C /* NotifiedWhenInBackground.swift */; };
+		E6CC7C3524624F3800EA139C /* SpecificAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC7C3424624F3800EA139C /* SpecificAccessibility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		E60DA21D245A6EDD00327FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E663CC5C246100BF00C08E1C /* GesturesLearning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesLearning.swift; sourceTree = "<group>"; };
 		E663CC5E24610A3900C08E1C /* HapticsLearning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsLearning.swift; sourceTree = "<group>"; };
+		E6CC7C30246245C300EA139C /* TriggeringEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggeringEvents.swift; sourceTree = "<group>"; };
+		E6CC7C3224624CA100EA139C /* NotifiedWhenInBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiedWhenInBackground.swift; sourceTree = "<group>"; };
+		E6CC7C3424624F3800EA139C /* SpecificAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificAccessibility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +68,8 @@
 		E60DA20B245A6EDC00327FBA /* Project17 */ = {
 			isa = PBXGroup;
 			children = (
-				E663CC5B2461008D00C08E1C /* Day87 */,
+				E6CC7C2F24623DFD00EA139C /* Day87 */,
+				E663CC5B2461008D00C08E1C /* Day86 */,
 				E60DA20C245A6EDC00327FBA /* AppDelegate.swift */,
 				E60DA20E245A6EDC00327FBA /* SceneDelegate.swift */,
 				E60DA213245A6EDC00327FBA /* ContentView.swift */,
@@ -83,11 +90,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E663CC5B2461008D00C08E1C /* Day87 */ = {
+		E663CC5B2461008D00C08E1C /* Day86 */ = {
 			isa = PBXGroup;
 			children = (
 				E663CC5C246100BF00C08E1C /* GesturesLearning.swift */,
 				E663CC5E24610A3900C08E1C /* HapticsLearning.swift */,
+			);
+			path = Day86;
+			sourceTree = "<group>";
+		};
+		E6CC7C2F24623DFD00EA139C /* Day87 */ = {
+			isa = PBXGroup;
+			children = (
+				E6CC7C30246245C300EA139C /* TriggeringEvents.swift */,
+				E6CC7C3224624CA100EA139C /* NotifiedWhenInBackground.swift */,
+				E6CC7C3424624F3800EA139C /* SpecificAccessibility.swift */,
 			);
 			path = Day87;
 			sourceTree = "<group>";
@@ -163,9 +180,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6CC7C31246245C300EA139C /* TriggeringEvents.swift in Sources */,
 				E60DA20D245A6EDC00327FBA /* AppDelegate.swift in Sources */,
 				E60DA20F245A6EDC00327FBA /* SceneDelegate.swift in Sources */,
 				E663CC5D246100BF00C08E1C /* GesturesLearning.swift in Sources */,
+				E6CC7C3324624CA100EA139C /* NotifiedWhenInBackground.swift in Sources */,
+				E6CC7C3524624F3800EA139C /* SpecificAccessibility.swift in Sources */,
 				E60DA214245A6EDC00327FBA /* ContentView.swift in Sources */,
 				E663CC5F24610A3900C08E1C /* HapticsLearning.swift in Sources */,
 				E60DA212245A6EDC00327FBA /* Project17.xcdatamodeld in Sources */,

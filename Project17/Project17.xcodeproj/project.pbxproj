@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6093E18246644380095AD25 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6093E17246644380095AD25 /* Card.swift */; };
+		E6093E1A246645710095AD25 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6093E19246645710095AD25 /* CardView.swift */; };
 		E60DA20D245A6EDC00327FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60DA20C245A6EDC00327FBA /* AppDelegate.swift */; };
 		E60DA20F245A6EDC00327FBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60DA20E245A6EDC00327FBA /* SceneDelegate.swift */; };
 		E60DA212245A6EDC00327FBA /* Project17.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E60DA210245A6EDC00327FBA /* Project17.xcdatamodeld */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E6093E17246644380095AD25 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		E6093E19246645710095AD25 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E60DA209245A6EDB00327FBA /* Project17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project17.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60DA20C245A6EDC00327FBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E60DA20E245A6EDC00327FBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,16 +72,18 @@
 		E60DA20B245A6EDC00327FBA /* Project17 */ = {
 			isa = PBXGroup;
 			children = (
-				E6CC7C2F24623DFD00EA139C /* Day87 */,
-				E663CC5B2461008D00C08E1C /* Day86 */,
-				E60DA20C245A6EDC00327FBA /* AppDelegate.swift */,
-				E60DA20E245A6EDC00327FBA /* SceneDelegate.swift */,
-				E60DA213245A6EDC00327FBA /* ContentView.swift */,
-				E60DA215245A6EDD00327FBA /* Assets.xcassets */,
-				E60DA21A245A6EDD00327FBA /* LaunchScreen.storyboard */,
 				E60DA21D245A6EDD00327FBA /* Info.plist */,
-				E60DA210245A6EDC00327FBA /* Project17.xcdatamodeld */,
+				E60DA20C245A6EDC00327FBA /* AppDelegate.swift */,
+				E6093E17246644380095AD25 /* Card.swift */,
+				E6093E19246645710095AD25 /* CardView.swift */,
+				E60DA213245A6EDC00327FBA /* ContentView.swift */,
+				E60DA20E245A6EDC00327FBA /* SceneDelegate.swift */,
+				E60DA215245A6EDD00327FBA /* Assets.xcassets */,
+				E663CC5B2461008D00C08E1C /* Day86 */,
+				E6CC7C2F24623DFD00EA139C /* Day87 */,
+				E60DA21A245A6EDD00327FBA /* LaunchScreen.storyboard */,
 				E60DA217245A6EDD00327FBA /* Preview Content */,
+				E60DA210245A6EDC00327FBA /* Project17.xcdatamodeld */,
 			);
 			path = Project17;
 			sourceTree = "<group>";
@@ -187,7 +193,9 @@
 				E6CC7C3324624CA100EA139C /* NotifiedWhenInBackground.swift in Sources */,
 				E6CC7C3524624F3800EA139C /* SpecificAccessibility.swift in Sources */,
 				E60DA214245A6EDC00327FBA /* ContentView.swift in Sources */,
+				E6093E18246644380095AD25 /* Card.swift in Sources */,
 				E663CC5F24610A3900C08E1C /* HapticsLearning.swift in Sources */,
+				E6093E1A246645710095AD25 /* CardView.swift in Sources */,
 				E60DA212245A6EDC00327FBA /* Project17.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

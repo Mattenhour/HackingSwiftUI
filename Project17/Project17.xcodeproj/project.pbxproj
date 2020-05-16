@@ -16,6 +16,7 @@
 		E60DA216245A6EDD00327FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60DA215245A6EDD00327FBA /* Assets.xcassets */; };
 		E60DA219245A6EDD00327FBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60DA218245A6EDD00327FBA /* Preview Assets.xcassets */; };
 		E60DA21C245A6EDD00327FBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60DA21A245A6EDD00327FBA /* LaunchScreen.storyboard */; };
+		E6390137246F4DC70099EC13 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6390136246F4DC70099EC13 /* SettingsView.swift */; };
 		E642F6D9246CB21B00C8BE18 /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642F6D8246CB21B00C8BE18 /* EditCards.swift */; };
 		E663CC5D246100BF00C08E1C /* GesturesLearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E663CC5C246100BF00C08E1C /* GesturesLearning.swift */; };
 		E663CC5F24610A3900C08E1C /* HapticsLearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E663CC5E24610A3900C08E1C /* HapticsLearning.swift */; };
@@ -36,6 +37,7 @@
 		E60DA218245A6EDD00327FBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E60DA21B245A6EDD00327FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E60DA21D245A6EDD00327FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6390136246F4DC70099EC13 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E642F6D8246CB21B00C8BE18 /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
 		E663CC5C246100BF00C08E1C /* GesturesLearning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesLearning.swift; sourceTree = "<group>"; };
 		E663CC5E24610A3900C08E1C /* HapticsLearning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsLearning.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				E60DA213245A6EDC00327FBA /* ContentView.swift */,
 				E642F6D8246CB21B00C8BE18 /* EditCards.swift */,
 				E60DA20E245A6EDC00327FBA /* SceneDelegate.swift */,
+				E6390136246F4DC70099EC13 /* SettingsView.swift */,
 				E60DA215245A6EDD00327FBA /* Assets.xcassets */,
 				E663CC5B2461008D00C08E1C /* Day86 */,
 				E6CC7C2F24623DFD00EA139C /* Day87 */,
@@ -201,6 +204,7 @@
 				E642F6D9246CB21B00C8BE18 /* EditCards.swift in Sources */,
 				E6093E1A246645710095AD25 /* CardView.swift in Sources */,
 				E60DA212245A6EDC00327FBA /* Project17.xcdatamodeld in Sources */,
+				E6390137246F4DC70099EC13 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

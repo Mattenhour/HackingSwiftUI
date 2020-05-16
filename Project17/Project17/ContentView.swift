@@ -23,6 +23,8 @@ struct ContentView: View {
     
     @State private var isActive = true
     @State private var showingEditScreen = false
+    @State private var showingSettingsScreen = false
+    @State private var isOnShuffle: Bool = true
     
     @State private var timeRemaining = 100
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -51,9 +53,9 @@ struct ContentView: View {
                 
                 ZStack {
                     ForEach(0..<cards.count, id: \.self) { index in
-                        CardView(card: self.cards[index]) {
+                        CardView(card: self.cards[index]) { isWrongAnswer in
                             withAnimation {
-                                self.removeCard(at: index)
+                                self.removeCard(at: index, wrong: isWrongAnswer)
                             }
                         }
                         .stacked(at: index, total: self.cards.count)
@@ -74,7 +76,20 @@ struct ContentView: View {
             
             VStack {
                 HStack {
-//                    Spacer()
+                    Button(action: {
+                        self.showingSettingsScreen = true
+                    }) {
+                        Image(systemName: "gear")
+                            .padding()
+                            .background(Color.black.opacity(0.7))
+                            .clipShape(Circle())
+                    }
+                    .sheet(isPresented: $showingSettingsScreen) {
+                        SettingsView(isOnShuffled: self.$isOnShuffle)
+                    }
+                    
+                    Spacer()
+                        .frame(width: 400)
 
                     Button(action: {
                         self.showingEditScreen = true
@@ -83,6 +98,9 @@ struct ContentView: View {
                             .padding()
                             .background(Color.black.opacity(0.7))
                             .clipShape(Circle())
+                    }
+                    .sheet(isPresented: $showingEditScreen, onDismiss: resetCard) {
+                        EditCards()
                     }
                 }
 
@@ -100,7 +118,7 @@ struct ContentView: View {
                         // Marked wrong
                         Button(action: {
                             withAnimation {
-                                self.removeCard(at: self.cards.count - 1)
+                                self.removeCard(at: self.cards.count - 1, wrong: true)
                             }
                         }) {
                             Image(systemName: "xmark.circle")
@@ -116,7 +134,7 @@ struct ContentView: View {
                         // Marked correct
                         Button(action: {
                             withAnimation {
-                                self.removeCard(at: self.cards.count - 1)
+                                self.removeCard(at: self.cards.count - 1, wrong: false)
                             }
                         }) {
                             Image(systemName: "checkmark.circle")
@@ -152,20 +170,19 @@ struct ContentView: View {
             }
         }
         
-        .sheet(isPresented: $showingEditScreen, onDismiss: resetCard) {
-            EditCards()
-        }
-        
         .onAppear(perform: resetCard)
     }
     
-    func removeCard(at index: Int) {
+    func removeCard(at index: Int, wrong isWrongAnswer: Bool) {
         guard index >= 0 else { return }
         
-        cards.remove(at: index)
-        
-        if cards.isEmpty {
-            isActive = false
+        if self.isOnShuffle, isWrongAnswer {
+            let elem = cards.remove(at: index)
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                self.cards.insert(elem, at: 0)
+            }
+        } else {
+            cards.remove(at: index)
         }
     }
     

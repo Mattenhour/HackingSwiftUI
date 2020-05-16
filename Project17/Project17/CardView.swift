@@ -8,12 +8,21 @@
 
 import SwiftUI
 
+//struct CardColor: ViewModifier {
+//    @State private var isDragging: Bool
+//    @State private var offset: CGSize
+//
+//    func body(content: Conent) -> some View {
+//
+//    }
+//}
+
 struct CardView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @Environment(\.accessibilityEnabled) var accessibilityEnabled
     
     let card: Card
-    var removal: (() -> Void)? = nil
+    var removal: ((_ isWrongAnswer: Bool) -> Void)? = nil
     
     @State private var isShowingAnswer = false
     
@@ -29,13 +38,13 @@ struct CardView: View {
                         ? Color.white
                         : Color.white
                             .opacity(1 - Double(abs(offset.width / 50)))
-            )
+                )
                 .background(
                     differentiateWithoutColor
                         ? nil
                         : RoundedRectangle(cornerRadius: 25, style: .continuous)
                             .fill(offset.width > 0 ? Color.green : Color.red)
-            )
+                )
                 .shadow(radius: 10)
             
             VStack {
@@ -67,9 +76,10 @@ struct CardView: View {
             
         .gesture(
             DragGesture()
-                .onChanged { gesture in
-                    self.offset = gesture.translation
-                    self.feedback.prepare()
+            
+            .onChanged { gesture in
+                self.offset = gesture.translation
+                self.feedback.prepare()
             }
                 
             .onEnded { _ in
@@ -78,10 +88,10 @@ struct CardView: View {
                     // Error hapitic when swiping left
                     if self.offset.width < 0 {
                         self.feedback.notificationOccurred(.error)
+                        self.removal?(true)
+                    } else {
+                        self.removal?(false) // ? means closure will only be called if it has been set
                     }
-                    
-                    // remove the card
-                    self.removal?() // ? means closure will only be called if it has been set
                     
                 } else {
                     self.offset = .zero

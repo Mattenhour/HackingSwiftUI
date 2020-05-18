@@ -43,7 +43,7 @@ struct CardView: View {
                     differentiateWithoutColor
                         ? nil
                         : RoundedRectangle(cornerRadius: 25, style: .continuous)
-                            .fill(offset.width > 0 ? Color.green : Color.red)
+                            .fill(cardColor(offset))
                 )
                 .shadow(radius: 10)
             
@@ -102,6 +102,16 @@ struct CardView: View {
                 self.isShowingAnswer.toggle()
         }
         .animation(.spring())
+    }
+    
+    func cardColor(_ offset: CGSize) -> Color {
+        if offset == .zero {
+            return Color.white
+        } else if offset.width > 0 {
+            return Color.green
+        } else {
+            return Color.red
+        }
     }
 }
 

@@ -178,11 +178,15 @@ struct ContentView: View {
         
         if self.isOnShuffle, isWrongAnswer {
             let elem = cards.remove(at: index)
-            DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.cards.insert(elem, at: 0)
             }
         } else {
             cards.remove(at: index)
+        }
+        
+        if cards.isEmpty {
+            self.isActive = false
         }
     }
     

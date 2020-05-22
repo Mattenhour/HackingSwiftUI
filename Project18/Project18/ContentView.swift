@@ -8,45 +8,41 @@
 
 import SwiftUI
 
-extension VerticalAlignment {
-    
-    /*
-     Using an enum instead of a struct will stop us
-     from creating an instance of MidAccountAndName
-     */
-    enum MidAccountAndName: AlignmentID {
-        static func defaultValue(in d: ViewDimensions) -> CGFloat {
-            d[.top]
+struct OuterView: View {
+    var body: some View {
+        VStack {
+            Text("Top")
+            InnterView()
+                .background(Color.green)
+            Text("Bottom")
         }
     }
-    
-    /*
-     For some reason creating a static constant
-     makes the cusom alignment easier to use.
-     
-     Still don't understand why
-     */
-    static let midAccountAndName = VerticalAlignment(MidAccountAndName.self)
+}
+
+struct InnterView: View {
+    var body: some View {
+        HStack {
+            Text("Left")
+            GeometryReader { geo in
+                Text("Center")
+                    .background(Color.blue)
+                    .onTapGesture {
+                        print("Global center: \(geo.frame(in: .global).midX) x \(geo.frame(in: .global).midY)") //Whole screen
+                        print("Custom center: \(geo.frame(in: .named("Custom")).midX) x \(geo.frame(in: .named("Custom")).midY)") // - safearea
+                        print("Local center: \(geo.frame(in: .local).midX) x \(geo.frame(in: .local).midY)") // Inside GeoReader
+                    }
+            }
+            .background(Color.orange)
+            Text("Right")
+        }
+    }
 }
 
 struct ContentView: View {
     var body: some View {
-        HStack(alignment: .midAccountAndName) {
-            VStack {
-                Text("@goofenhour")
-                    .alignmentGuide(.midAccountAndName) { d in d[VerticalAlignment.center]}
-                Image("Matt")
-                .resizable()
-                    .frame(width: 125, height:  125)
-            }
-            
-            VStack {
-                Text("Full name:")
-                Text("Matt Ridenhour")
-                    .alignmentGuide(.midAccountAndName) { d in d[VerticalAlignment.center]}
-                    .font(.largeTitle)
-            }
-        }
+        OuterView()
+            .background(Color.red)
+            .coordinateSpace(name: "Custom")
     }
 }
 

@@ -14,6 +14,7 @@
 		E6004BDF2474C61F00023DB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6004BDE2474C61F00023DB4 /* Assets.xcassets */; };
 		E6004BE22474C61F00023DB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6004BE12474C61F00023DB4 /* Preview Assets.xcassets */; };
 		E6004BE52474C61F00023DB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6004BE32474C61F00023DB4 /* LaunchScreen.storyboard */; };
+		E615FB9424775A0C006B646C /* Day92.swift in Sources */ = {isa = PBXBuildFile; fileRef = E615FB9324775A0C006B646C /* Day92.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E6004BE12474C61F00023DB4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E6004BE42474C61F00023DB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6004BE62474C61F00023DB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E615FB9324775A0C006B646C /* Day92.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day92.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +60,15 @@
 		E6004BD42474C61D00023DB4 /* Project18 */ = {
 			isa = PBXGroup;
 			children = (
+				E6004BE62474C61F00023DB4 /* Info.plist */,
 				E6004BD52474C61D00023DB4 /* AppDelegate.swift */,
-				E6004BD72474C61D00023DB4 /* SceneDelegate.swift */,
 				E6004BDC2474C61D00023DB4 /* ContentView.swift */,
+				E615FB9324775A0C006B646C /* Day92.swift */,
+				E6004BD72474C61D00023DB4 /* SceneDelegate.swift */,
 				E6004BDE2474C61F00023DB4 /* Assets.xcassets */,
 				E6004BE32474C61F00023DB4 /* LaunchScreen.storyboard */,
-				E6004BE62474C61F00023DB4 /* Info.plist */,
-				E6004BD92474C61D00023DB4 /* Project18.xcdatamodeld */,
 				E6004BE02474C61F00023DB4 /* Preview Content */,
+				E6004BD92474C61D00023DB4 /* Project18.xcdatamodeld */,
 			);
 			path = Project18;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6004BDB2474C61D00023DB4 /* Project18.xcdatamodeld in Sources */,
+				E615FB9424775A0C006B646C /* Day92.swift in Sources */,
 				E6004BD62474C61D00023DB4 /* AppDelegate.swift in Sources */,
 				E6004BDD2474C61D00023DB4 /* ContentView.swift in Sources */,
 				E6004BD82474C61D00023DB4 /* SceneDelegate.swift in Sources */,

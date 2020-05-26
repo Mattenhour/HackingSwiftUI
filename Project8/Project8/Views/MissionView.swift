@@ -21,15 +21,19 @@ struct MissionView: View {
     let astronauts: [CrewMember]
     
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { fullScreen in
             ScrollView(.vertical) {
                 VStack {
-                    Image(self.mission.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: geometry.size.width * 0.70)
-                        .padding(.top)
-                        .accessibility(hidden: true)
+                    GeometryReader { geo in
+                        Image(self.mission.image)
+                            .resizable()
+                            .scaledToFit()
+                            .scaleEffect(max(0.8, min(1.0, geo.frame(in: .global).minY / (fullScreen.size.height / 10))))
+                            .frame(maxWidth: geo.size.width)
+//                            .padding(.top)
+//                            .accessibility(hidden: true)
+                    }
+                    .frame(height: 300)
                     
                     Text(self.mission.formattedLaunchDate)
                         .padding()

@@ -12,7 +12,16 @@ struct AllRolls: View {
     @EnvironmentObject var rolls: Rolls
     
     var body: some View {
-        Text("AllRolls view")
+        VStack(alignment: .leading) {
+            Text("sum of rolls: \(rolls.sumRolls())")
+            
+            List {
+                ForEach(rolls.rolls) { currentRoll in
+                    Text("\(currentRoll.value)")
+                        .font(.body)
+                }
+            }
+        }
     }
 }
 

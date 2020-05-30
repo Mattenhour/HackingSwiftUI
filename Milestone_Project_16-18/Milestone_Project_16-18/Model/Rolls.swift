@@ -17,4 +17,8 @@ class Rolls: ObservableObject {
     func addRoll(_ roll: Roll) {
         rolls.append(roll)
     }
+    
+    func sumRolls() -> Int {
+        return rolls.reduce(0) { $0 + $1.value }
+    }
 }

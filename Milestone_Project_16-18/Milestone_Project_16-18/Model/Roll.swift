@@ -7,8 +7,8 @@
 //
 
 import SwiftUI
-class Roll: Identifiable, Codable {
+class Roll: Identifiable {
     let id = UUID()
-    let currentRoll: Int
+    var value: Int = 1
     
 }
